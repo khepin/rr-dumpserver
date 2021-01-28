@@ -22,14 +22,14 @@ type Service struct {
 	echo   *echo.Echo
 }
 
-func (s *Service) Init(r *rpc.Service, cfg *Config) (ok bool, err error) {
+func (s *Service) Init(r *rpc.Service, cfg *Config) (bool, error) {
 	if !cfg.Enabled {
-		return
+		return true, nil
 	}
 	s.Config = cfg
 	s.Buffer = ring.New(int(cfg.HistorySize))
 
-	err = r.Register(ID, &rpcService{Service: s})
+	err := r.Register(ID, &rpcService{Service: s})
 	if err != nil {
 		logrus.Fatal(err)
 	}
