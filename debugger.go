@@ -37,7 +37,6 @@ func (s *Service) Init(r *rpc.Service, cfg *Config) (ok bool, err error) {
 }
 
 func (s *Service) Serve() error {
-	fmt.Println("starting http server")
 	return s.echo.Start(s.Config.Address)
 }
 
