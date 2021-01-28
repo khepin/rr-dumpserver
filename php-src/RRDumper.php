@@ -2,7 +2,7 @@
 
 namespace Khepin\RRDumpServer;
 
-use Spiral\Goridge\RPC\RPC;
+use Spiral\Goridge\RPC;
 use Symfony\Component\VarDumper\Cloner\VarCloner;
 use Symfony\Component\VarDumper\Dumper\HtmlDumper;
 
