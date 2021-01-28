@@ -7,7 +7,6 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/davecgh/go-spew/spew"
 	"github.com/labstack/echo/v4"
 	"github.com/markbates/pkger"
 	"github.com/sirupsen/logrus"
@@ -24,9 +23,8 @@ type Service struct {
 }
 
 func (s *Service) Init(r *rpc.Service, cfg *Config) (bool, error) {
-	spew.Dump(cfg)
-	if !cfg.Enabled {
-		return true, nil
+	if !cfg.Enable {
+		return false, nil
 	}
 	s.Config = cfg
 	s.Buffer = ring.New(int(cfg.HistorySize))
@@ -78,7 +76,7 @@ func (s *Service) prepareHttp() {
 }
 
 type Config struct {
-	Enabled     bool
+	Enable      bool
 	HistorySize uint
 	Address     string
 }
