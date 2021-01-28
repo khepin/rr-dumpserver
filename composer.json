@@ -1,5 +1,5 @@
 {
-    "name": "khepin/rr-dumper",
+    "name": "khepin/rr-dumpserver",
     "description": "A dump server plugin for roadrunner PHP app server",
     "type": "library",
     "require": {
