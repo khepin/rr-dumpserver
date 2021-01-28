@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/davecgh/go-spew/spew"
 	"github.com/labstack/echo/v4"
 	"github.com/markbates/pkger"
 	"github.com/sirupsen/logrus"
@@ -23,6 +24,7 @@ type Service struct {
 }
 
 func (s *Service) Init(r *rpc.Service, cfg *Config) (bool, error) {
+	spew.Dump(cfg)
 	if !cfg.Enabled {
 		return true, nil
 	}
