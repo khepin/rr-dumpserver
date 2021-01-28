@@ -1,0 +1,17 @@
+version=1
+
+# Overall debounce duration
+#
+# For a given pattern:command combination, if a file is modified that matches the same pattern within
+# "debounce" duration of the first one, it will be ignored.
+# Format is `ND` where `N` is an integer and `D` is one of: `[ns, ms, s, m, h]` respectively for
+# nanoseconds, milliseconds, seconds, minutes and hours
+debounce="200ms"
+
+# Map of `glob-pattern => command`
+# Every time a file is modified that matches the given glob pattern, the command will be executed.
+# Commands are executed at most once per pattern per debounce period.
+# If one of the pattern / command combination would benefit from a longer / shorter debounce than the others
+# it can be adjusted on a per command basis
+[patterns]
+"frontend/*.vue"={cmd = "make assets", debounce="20s"}

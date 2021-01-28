@@ -1,0 +1,25 @@
+{
+    "name": "khepin/rr-dumper",
+    "description": "A dump server plugin for roadrunner PHP app server",
+    "type": "library",
+    "require": {
+        "symfony/var-dumper": "^5.2",
+        "spiral/goridge": "^3.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "khepin",
+            "email": "khepin@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Khepin\\RRDumpServer\\": "php-src"
+        }
+    },
+    "config": {
+        "__comment": "using a custom vendor directory as `vendor` is also a vendoring directory for Go",
+        "vendor-dir": "php-vendor"
+    }
+}
