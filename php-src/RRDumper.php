@@ -52,7 +52,7 @@ class RRDumper
         ]);
 
         // Sending our info to the roadrunner service
-        return $this->rpc->call("debugger.SendDebugInfo", $result);
+        return $this->rpc->call("dumpserver.SendDebugInfo", $result);
     }
 
     public function getDumpString($variable) : string
