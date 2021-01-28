@@ -1,4 +1,4 @@
-package debugger
+package dumpserver
 
 import (
 	"container/ring"
@@ -14,7 +14,7 @@ import (
 	"github.com/spiral/roadrunner/service/rpc"
 )
 
-const ID = "debugger"
+const ID = "dumpserver"
 
 type Service struct {
 	Config *Config
@@ -29,7 +29,7 @@ func (s *Service) Init(r *rpc.Service, cfg *Config) (ok bool, err error) {
 	s.Config = cfg
 	s.Buffer = ring.New(int(cfg.HistorySize))
 
-	r.Register("debugger", &rpcService{Service: s})
+	r.Register("dumpserver", &rpcService{Service: s})
 
 	s.prepareHttp()
 
