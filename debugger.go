@@ -4,7 +4,6 @@ import (
 	"container/ring"
 	"context"
 	"encoding/json"
-	"fmt"
 	"net/http"
 	"time"
 
