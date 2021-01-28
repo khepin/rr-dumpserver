@@ -16,7 +16,10 @@
     "autoload": {
         "psr-4": {
             "Khepin\\RRDumpServer\\": "php-src"
-        }
+        },
+        "files": [
+            "php-src/helpers.php"
+        ]
     },
     "config": {
         "__comment": "using a custom vendor directory as `vendor` is also a vendoring directory for Go",
