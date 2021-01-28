@@ -29,7 +29,7 @@ class RRDumper
         self::$instance->dumper = new HtmlDumper();
     }
 
-    public function dump(mixed $variable) : string
+    public function dump($variable) : string
     {
         // Get the backtrace and the information we care about from it.
         $bt = debug_backtrace();
@@ -55,7 +55,7 @@ class RRDumper
         return $this->rpc->call("debugger.SendDebugInfo", $result);
     }
 
-    public function getDumpString(mixed $variable) : string
+    public function getDumpString($variable) : string
     {
         $output = '';
 
