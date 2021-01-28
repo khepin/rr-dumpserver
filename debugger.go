@@ -9,6 +9,7 @@ import (
 
 	"github.com/labstack/echo/v4"
 	"github.com/markbates/pkger"
+	"github.com/sirupsen/logrus"
 	"github.com/spiral/roadrunner/service"
 	"github.com/spiral/roadrunner/service/rpc"
 )
@@ -28,7 +29,10 @@ func (s *Service) Init(r *rpc.Service, cfg *Config) (ok bool, err error) {
 	s.Config = cfg
 	s.Buffer = ring.New(int(cfg.HistorySize))
 
-	r.Register("dumpserver", &rpcService{Service: s})
+	err = r.Register(ID, &rpcService{Service: s})
+	if err != nil {
+		logrus.Fatal(err)
+	}
 
 	s.prepareHttp()
 
