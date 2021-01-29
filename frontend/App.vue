@@ -6,7 +6,7 @@
         <title>RoadRunner Debugger</title>
     </head>
     <body>
-        <h1>RR gRPC Debugger</h1>
+        <h1>RR Dumpserver</h1>
         <div v-for="(log, id) in debuglogs" :key=id>
             <Dump :value=log></Dump>
         </div>

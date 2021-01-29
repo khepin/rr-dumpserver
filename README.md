@@ -12,6 +12,8 @@ Those calls are made using the global `rrdump` helper function.
 
 ## Sample
 
+Note while the gif mentions gRPC, it's not the case that this is limited to gRPC.
+
 ![debug-gif](https://raw.githubusercontent.com/khepin/rr-dumpserver/main/debugger.gif)
 
 ## Setup
